@@ -9,14 +9,38 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      firstName: {
         type: Sequelize.STRING
       },
-      surname: {
-        type: Sequelize.STRING
+      lastName: {
+        type: Sequelize.STRING,
+        validate: {
+          isAlpha: true
+        }
       },
       email: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        unique: true,
+        validate: {
+          isEmail: true
+        }
+      },
+      login: {
+        type: Sequelize.STRING(20),
+        allowNull: false,
+        unique: true,
+        validate: {
+          len: [6, 20]
+        }
+      },
+      age: {
+        type: Sequelize.INTEGER,
+        validate: {
+          min: 0
+        }
+      },
+      passwordHash: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

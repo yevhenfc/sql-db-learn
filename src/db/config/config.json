@@ -1,8 +1,8 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "postgres",
-    "database": "todo",
+    "username": "yevhen",
+    "password": "admin",
+    "database": "todo_pd2022",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
