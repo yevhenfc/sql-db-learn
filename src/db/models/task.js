@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: {field: 'userId'},
         as: 'owner'
       })
+      Task.hasMany(models.Comment, {
+        foreignKey: {field: 'taskId'}
+      })     
     }
   }
   Task.init({
